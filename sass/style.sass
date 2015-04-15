@@ -1,0 +1,62 @@
+@import "compass/css3"
+
+$pc: 1080px
+$pad: 769px
+$phone: 480px
+
+=rwd($width)
+    @media only screen and (max-width: #{$width})
+        @content
+
+=vp($name, $argument)
+    -webkit-#{$name}: #{$argument}
+    -ms-#{$name}: #{$argument}
+    -moz-#{$name}: #{$argument}
+    -o-#{$name}: #{$argument}
+    #{$name}: #{$argument}
+
+=vpa($name, $argument)
+    #{$name}: -webkit-#{$argument}
+    #{$name}: -ms-#{$argument}
+    #{$name}: -moz-#{$argument}
+    #{$name}: -o-#{$argument}
+    #{$name}: #{$argument}
+
+html,body
+    margin: 0
+    padding: 0
+    width: 100%
+    height: 100%
+    background: url(../images/bg.jpg)
+    background-size: cover
+    background-position: center center
+    background-attachment: fixed
+    display: table
+
+.container
+    text-align: center
+    vertical-align: middle
+    display: table-cell
+    overflow: auto
+
+.slashBackground
+    +vpa(background, linear-gradient(-45deg, rgba(255,255,255,0.6) 25%, rgba(255,255,255,0.5) 25%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.6) 75%, rgba(255,255,255,0.5) 75%, rgba(255,255,255,0.5)))
+    background-size: 10px 10px
+
+h1.indexTitle
+    margin: 0
+    font-weight: normal
+    font-size: 96px
+    color: #000
+    +rwd($pad)
+        font-size: 72px
+
+h3.indexSubtitle
+    margin: 0
+    font-weight: normal
+    font-size: 26px
+    padding-bottom: 80px
+    color: #333
+    +rwd($pad)
+        padding-bottom: 50px
+        font-size: 18px

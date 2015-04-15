@@ -1,0 +1,67 @@
+@import "compass/css3"
+
+$pc: 1080px
+$pad: 769px
+$phone: 480px
+
+=rwd($width)
+    @media only screen and (max-width: #{$width})
+        @content
+
+=vp($name, $argument)
+    -webkit-#{$name}: #{$argument}
+    -ms-#{$name}: #{$argument}
+    -moz-#{$name}: #{$argument}
+    -o-#{$name}: #{$argument}
+    #{$name}: #{$argument}
+
+=vpa($name, $argument)
+    #{$name}: -webkit-#{$argument}
+    #{$name}: -ms-#{$argument}
+    #{$name}: -moz-#{$argument}
+    #{$name}: -o-#{$argument}
+    #{$name}: #{$argument}
+
+a
+    display: inline-block
+    text-decoration: none
+
+.loginButton
+    padding-bottom: 150px
+    a
+        border-radius: 5px
+        font-size: 20px
+        width: 220px
+        padding-top: 20px
+        padding-bottom: 20px
+        margin: 10px
+        +transition(transform,0.1s,linear,box-shadow,0.2s,linear)
+        +rwd($pad)
+            font-size: 20px
+            margin-left: 50px
+            margin-right: 50px
+            padding-top: 15px
+            padding-bottom: 15px
+            width: 320px
+    .loginButtonFB
+        background-color: #3b5998
+        color: #FFF
+        border: 1px solid #1b345d
+        &:hover
+            +transform(translate(-2px,-2px))
+            box-shadow: 2px 2px 0 #1b345d
+        &:active
+            box-shadow: 0px 0px 0 #1b345d
+            +transform(translate(0px,0px))
+    .loginButtonNotFB
+        background-color: rgba(0,0,0,0)
+        font-size: 20px
+        color: #000
+        border: 2px solid #000
+        &:hover
+            +transform(translate(-2px,-2px))
+            box-shadow: 2px 2px 0 #000
+        &:active
+            box-shadow: 0px 0px 0 #000
+            +transform(translate(0px,0px))
+//<button>Button

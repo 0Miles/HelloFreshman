@@ -1,6 +1,6 @@
 <?php
 class Views{
-    function load($filename, $data){
+    function load($filename, $argument){
         include('views/'.$filename.'.php');
     }
 

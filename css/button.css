@@ -1,0 +1,69 @@
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.loginButton {
+  padding-bottom: 150px;
+}
+.loginButton a {
+  border-radius: 5px;
+  font-size: 20px;
+  width: 220px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 10px;
+  -moz-transition: -moz-transform, 0.1s, linear, box-shadow, 0.2s, linear;
+  -o-transition: -o-transform, 0.1s, linear, box-shadow, 0.2s, linear;
+  -webkit-transition: -webkit-transform, 0.1s, linear, box-shadow, 0.2s, linear;
+  transition: transform, 0.1s, linear, box-shadow, 0.2s, linear;
+}
+@media only screen and (max-width: 769px) {
+  .loginButton a {
+    font-size: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 320px;
+  }
+}
+.loginButton .loginButtonFB {
+  background-color: #3b5998;
+  color: #FFF;
+  border: 1px solid #1b345d;
+}
+.loginButton .loginButtonFB:hover {
+  -moz-transform: translate(-2px, -2px);
+  -ms-transform: translate(-2px, -2px);
+  -webkit-transform: translate(-2px, -2px);
+  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px 0 #1b345d;
+}
+.loginButton .loginButtonFB:active {
+  box-shadow: 0px 0px 0 #1b345d;
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+}
+.loginButton .loginButtonNotFB {
+  background-color: transparent;
+  font-size: 20px;
+  color: #000;
+  border: 2px solid #000;
+}
+.loginButton .loginButtonNotFB:hover {
+  -moz-transform: translate(-2px, -2px);
+  -ms-transform: translate(-2px, -2px);
+  -webkit-transform: translate(-2px, -2px);
+  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px 0 #000;
+}
+.loginButton .loginButtonNotFB:active {
+  box-shadow: 0px 0px 0 #000;
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+}
