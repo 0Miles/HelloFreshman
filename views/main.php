@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width; initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
     <title>Hello新生</title>
 </head>
 <body>
-    <div class='container-left'>
+    <div class='container'>
         <div class='navbar'>
             <a href="#" class="navrwdbutton">三</a>
             <a href="/" class='navtitle'>
@@ -23,14 +24,15 @@
             </a>
 
         </div>
-        <div class="mainbar slashBackground">
-            <a href="?fliter=school" class="button" id='school'>學校同學</a>
-            <a href="?fliter=dept" class="button" id='dept'>系上同學</a>
-            <a href="?fliter=upper" class="button" id='upper'>學長學姊</a>
-            <a href="?fliter=under" class="button" id='under'>學弟學妹</a>
-            <a href="?fliter=lineal" class="button" id='lineal'>直系</a>
+        <div class="fliterList">
+            <a href="?fliter=school" class="fliter fliter-focus" id='school'>學校同學</a>
+            <a href="?fliter=dept" class="fliter" id='dept'>系上同學</a>
+            <a href="?fliter=upper" class="fliter" id='upper'>學長學姊</a>
+            <a href="?fliter=under" class="fliter" id='under'>學弟學妹</a>
+            <a href="?fliter=lineal" class="fliter" id='lineal'>直系</a>
+            <a href="#" class="fliter" id="search">搜尋</a>
         </div>
-        <div class="main">
+        <div class="main slashBackground">
 
         </div>
 

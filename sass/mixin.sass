@@ -1,0 +1,23 @@
+@import "compass/css3"
+
+=rwd($width)
+    @media only screen and (max-width: #{$width})
+        @content
+
+=vp($name, $argument)
+    -webkit-#{$name}: #{$argument}
+    -ms-#{$name}: #{$argument}
+    -moz-#{$name}: #{$argument}
+    -o-#{$name}: #{$argument}
+    #{$name}: #{$argument}
+
+=vpa($name, $argument)
+    #{$name}: -webkit-#{$argument}
+    #{$name}: -ms-#{$argument}
+    #{$name}: -moz-#{$argument}
+    #{$name}: -o-#{$argument}
+    #{$name}: #{$argument}
+
+$pc: 1080px
+$pad: 769px
+$phone: 480px

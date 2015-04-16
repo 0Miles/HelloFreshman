@@ -1,0 +1,46 @@
+.fliterList {
+  display: block;
+  position: absolute;
+  text-align: left;
+  top: 60px;
+  height: 60px;
+  width: 100vw;
+  background-color: #6C4242;
+  box-shadow: 0px 3px 2px rgba(255, 255, 255, 0.15);
+  z-index: 1;
+}
+.fliterList .fliter {
+  display: inline-block;
+  font-size: 20px;
+  color: #f0f0f0;
+  line-height: 60px;
+  padding-left: 10px;
+  padding-right: 10px;
+  -moz-transition: background-color, 0.3s, linear;
+  -o-transition: background-color, 0.3s, linear;
+  -webkit-transition: background-color, 0.3s, linear;
+  transition: background-color, 0.3s, linear;
+}
+.fliterList .fliter:first-child {
+  padding-left: 30px;
+}
+.fliterList .fliter:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.fliterList .fliter-focus {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.main {
+  display: block;
+  position: absolute;
+  top: 120px;
+  background-color: rgba(243, 243, 243, 0.38);
+  height: -webkit-calc(100vh - 120px);
+  height: -ms-calc(100vh - 120px);
+  height: -moz-calc(100vh - 120px);
+  height: -o-calc(100vh - 120px);
+  height: calc(100vh - 120px);
+  width: 100vw;
+  overflow-y: auto;
+}

@@ -1,30 +1,22 @@
-@import "compass/css3"
+@import "mixin.sass"
 
-$pc: 1080px
-$pad: 769px
-$phone: 480px
+h1.indexTitle
+    margin: 0
+    font-weight: normal
+    font-size: 96px
+    color: #000
+    +rwd($pad)
+        font-size: 72px
 
-=rwd($width)
-    @media only screen and (max-width: #{$width})
-        @content
-
-=vp($name, $argument)
-    -webkit-#{$name}: #{$argument}
-    -ms-#{$name}: #{$argument}
-    -moz-#{$name}: #{$argument}
-    -o-#{$name}: #{$argument}
-    #{$name}: #{$argument}
-
-=vpa($name, $argument)
-    #{$name}: -webkit-#{$argument}
-    #{$name}: -ms-#{$argument}
-    #{$name}: -moz-#{$argument}
-    #{$name}: -o-#{$argument}
-    #{$name}: #{$argument}
-
-a
-    display: inline-block
-    text-decoration: none
+h3.indexSubtitle
+    margin: 0
+    font-weight: normal
+    font-size: 26px
+    padding-bottom: 80px
+    color: #333
+    +rwd($pad)
+        padding-bottom: 50px
+        font-size: 18px
 
 .loginButton
     padding-bottom: 150px
@@ -64,4 +56,3 @@ a
         &:active
             box-shadow: 0px 0px 0 #000
             +transform(translate(0px,0px))
-//<button>Button

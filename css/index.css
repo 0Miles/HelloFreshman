@@ -1,6 +1,27 @@
-a {
-  display: inline-block;
-  text-decoration: none;
+h1.indexTitle {
+  margin: 0;
+  font-weight: normal;
+  font-size: 96px;
+  color: #000;
+}
+@media only screen and (max-width: 769px) {
+  h1.indexTitle {
+    font-size: 72px;
+  }
+}
+
+h3.indexSubtitle {
+  margin: 0;
+  font-weight: normal;
+  font-size: 26px;
+  padding-bottom: 80px;
+  color: #333;
+}
+@media only screen and (max-width: 769px) {
+  h3.indexSubtitle {
+    padding-bottom: 50px;
+    font-size: 18px;
+  }
 }
 
 .loginButton {
