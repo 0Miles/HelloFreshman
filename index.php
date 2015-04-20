@@ -1,6 +1,7 @@
 <?php
-include 'view.php';
 session_start();
+include 'dbctrl.php';
+include 'view.php';
 
 $view = new Views;
 

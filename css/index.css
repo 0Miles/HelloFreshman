@@ -4,7 +4,7 @@ h1.indexTitle {
   font-size: 96px;
   color: #000;
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 1024px) {
   h1.indexTitle {
     font-size: 72px;
   }
@@ -17,7 +17,7 @@ h3.indexSubtitle {
   padding-bottom: 80px;
   color: #333;
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 1024px) {
   h3.indexSubtitle {
     padding-bottom: 50px;
     font-size: 18px;
@@ -39,7 +39,7 @@ h3.indexSubtitle {
   -webkit-transition: -webkit-transform, 0.1s, linear, box-shadow, 0.2s, linear;
   transition: transform, 0.1s, linear, box-shadow, 0.2s, linear;
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 1024px) {
   .loginButton a {
     font-size: 20px;
     margin-left: 50px;

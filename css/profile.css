@@ -1,0 +1,67 @@
+.leftside {
+  position: absolute;
+  top: 60px;
+  width: 25vw;
+  height: -webkit-calc(100vh - 60px);
+  height: -ms-calc(100vh - 60px);
+  height: -moz-calc(100vh - 60px);
+  height: -o-calc(100vh - 60px);
+  height: calc(100vh - 60px);
+  background-color: #6C4242;
+}
+.leftside .photo {
+  display: inline-block;
+  width: 13vw;
+  height: 13vw;
+  max-width: 180px;
+  max-height: 180px;
+  margin-top: 25px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.75) inset;
+  z-index: 10;
+}
+.leftside .fullname {
+  color: #FFF;
+  font-weight: normal;
+  margin-bottom: 0px;
+}
+.leftside .subtitle {
+  color: #FFF;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 50px;
+}
+.leftside .item {
+  display: inline-block;
+  width: 25vw;
+  height: 35px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.leftside .item:hover {
+  background-color: rgba(131, 87, 87, 0.6);
+}
+.leftside .item-focus {
+  background-color: #FFF;
+  color: #6C4242;
+}
+.leftside .item-focus:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.profile {
+  position: absolute;
+  top: 60px;
+  left: 25vw;
+  width: 75vw;
+  height: -webkit-calc(100vh - 60px);
+  height: -ms-calc(100vh - 60px);
+  height: -moz-calc(100vh - 60px);
+  height: -o-calc(100vh - 60px);
+  height: calc(100vh - 60px);
+}

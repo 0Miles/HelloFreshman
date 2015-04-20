@@ -50,7 +50,7 @@ a {
   color: #ffffff;
   line-height: 60px;
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 1024px) {
   .navbar .navrwdbutton {
     display: block;
   }
@@ -64,7 +64,7 @@ a {
   margin-left: 30px;
   color: #ffffff;
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 1024px) {
   .navbar .navtitle {
     margin-left: 0px;
   }
@@ -85,7 +85,7 @@ a {
   -webkit-transition: background-color, 0.3s, linear;
   transition: background-color, 0.3s, linear;
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 1024px) {
   .navbar .navitem {
     display: none;
   }
@@ -101,7 +101,7 @@ a {
   border-radius: 50%;
   border: 2px solid #5C3A3A;
 }
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 1024px) {
   .navbar .navitem .navphoto {
     display: none;
   }

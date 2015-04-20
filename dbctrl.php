@@ -44,14 +44,6 @@ class UserCtrl{
         $this->db = NULL;
     }
 
-    function showUserPhoto($id){
-        $this->DBconnect();
-        $picture=$this->db->query("SELECT `photo` FROM `userlist` WHERE `ID`='$id'")->fetch();
-        $this->db = NULL;
-        header("Content-type: image/jpeg");
-        echo base64_decode($picture["photo"]);
-    }
-
     function saveUserPhoto($id,$photo){
         $photo_w = imagesx($photo);
         $photo_h = imagesy($photo);
@@ -105,60 +97,6 @@ class UserCtrl{
             return FALSE;
         }else{
             return $result['fullname'];
-        }
-    }
-
-    function getUserGender($gender){
-        if(empty($gender)){
-            return FALSE;
-        }else{
-            switch ($gender)
-            {
-            case '0':
-                return '尚未填寫性別';
-                break;
-            case '1':
-                return '男同學';
-                break;
-            case '2':
-                return '女同學';
-                break;
-            default:
-                return '其他性別的同學';
-            }
-        }
-    }
-
-    function getUserSchool($school){
-
-        if(empty($school)){
-            return FALSE;
-        }else{
-            switch ($school)
-            {
-            case '112':
-                return '台灣大學';
-                break;
-            case '118':
-                return '台灣科技大學';
-                break;
-            case '122':
-                return '台灣師範大學';
-                break;
-            default:
-                return '未知的學校';
-            }
-        }
-    }
-
-    function getUserDepartment($id){
-        $this->DBconnect();
-        $result = $this->db->query("SELECT `department` FROM `userlist` WHERE `ID`='$id'")->fetch();
-        $this->db = NULL;
-        if(empty($result)){
-            return FALSE;
-        }else{
-            return $result['department'];
         }
     }
 

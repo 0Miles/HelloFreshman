@@ -1,0 +1,53 @@
+@import "mixin.sass"
+
+.leftside
+    position: absolute
+    top: 60px
+    width: 25vw
+    +vpa(height, calc(100vh - 60px))
+    background-color: #6C4242
+    .photo
+        display: inline-block
+        width: 13vw
+        height: 13vw
+        max-width: 180px
+        max-height: 180px
+        margin-top: 25px
+        border-radius: 50%
+        background-size: cover
+        background-position: center
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.75) inset
+        z-index: 10
+
+    .fullname
+        color: #FFF
+        font-weight: normal
+        margin-bottom: 0px
+
+    .subtitle
+        color: #FFF
+        font-size: 18px
+        font-weight: normal
+        margin: 0
+        margin-bottom: 50px
+    .item
+        display: inline-block
+        width: 25vw
+        height: 35px
+        padding-top: 10px
+        padding-bottom: 10px
+        font-size: 24px
+        color: rgba(255, 255, 255, 0.7)
+        &:hover
+            background-color: rgba(131, 87, 87, 0.6)
+    .item-focus
+        background-color: #FFF
+        color: #6C4242
+        &:hover
+            background-color: rgba(255, 255, 255, 0.75)
+.profile
+    position: absolute
+    top: 60px
+    left: 25vw
+    width: 75vw
+    +vpa(height, calc(100vh - 60px))
