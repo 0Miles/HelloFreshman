@@ -4,8 +4,11 @@
     position: absolute
     top: 60px
     width: 25vw
+    overflow: hidden
     +vpa(height, calc(100vh - 60px))
     background-color: #6C4242
+    +rwd($pad)
+        display: none
     .photo
         display: inline-block
         width: 13vw
@@ -28,8 +31,11 @@
         color: #FFF
         font-size: 18px
         font-weight: normal
-        margin: 0
-        margin-bottom: 50px
+        margin: 5px
+    ul.subtitle
+        display: inline-block
+        text-align: left
+        width: 13vw
     .item
         display: inline-block
         width: 25vw
@@ -46,8 +52,99 @@
         &:hover
             background-color: rgba(255, 255, 255, 0.75)
 .profile
+    display: table
     position: absolute
     top: 60px
     left: 25vw
     width: 75vw
+    overflow: hidden
     +vpa(height, calc(100vh - 60px))
+    +rwd($pad)
+        left: 0
+        width: 100vw
+    .profileblock
+        ul
+            display: inline-block
+            padding: 0
+            +vpa(width, calc(75vw - 80px))
+            +rwd($pad)
+                +vpa(width, calc(100vw))
+            .notext
+                &:before
+                    display: block
+                    position: absolute
+                    content: '尚未填寫'
+                    width: 150px
+                    height: 150px
+                    background-color: rgba(0, 0, 0, 0.5)
+                    &:hover
+                        background-color: rgba(0, 0, 0, 0.3)
+
+            a
+                display: list-item
+                list-style-type: none
+                float: left
+                margin: 5px
+                width: 150px
+                height: 150px
+                background-color: rgba(0,0,0,0.5)
+                line-height: 150px
+                text-align: center
+                color: #FFF
+                font-size: 20px
+
+                +rwd($phone)
+                    font-size: 12px
+                    line-height: 75px
+
+                img
+                    width: 150px
+                    height: 150px
+
+.updateProfile
+    display: inline-block
+    text-align: center
+    +vpa(height, calc(100vh - 60px))
+    width: 75vw
+    +rwd($pad)
+        +vpa(width, calc(100vw))
+
+    label
+        display: inline-block
+        text-align: left
+        width: 10vw
+        font-size: 20px
+        +rwd($pad)
+            width: 30vw
+
+    input
+        &[type="text"]
+            width: 35vw
+            height: 30px
+            border-radius: 5px
+            border: 2px solid #CCC
+            padding-left: 5px
+            background: #FEFEFE
+            margin: 5px
+            +rwd($pad)
+                width: 45vw
+
+    select
+        width: 35vw
+        height: 35px
+        border-radius: 5px
+        border: 2px solid #CCC
+        background: #FEFEFE
+        padding-left: 5px
+        margin: 5px
+        +rwd($pad)
+            width: 45vw
+
+    img
+        display: inline-block
+        width: 35px
+        height: 35px
+
+    .labimg
+        text-align: center
+        height: 35px

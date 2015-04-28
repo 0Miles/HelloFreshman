@@ -56,8 +56,8 @@ if(isset($session)){
     $userdata = $uc->getAllUserData($fbid);
 
     $_SESSION['ID'] = $fbid;
-    $_SESSION['fullname'] = $fbfullname;
-    $_SESSION['fblink'] = $fblink;
+    $_SESSION['fullname'] = $userdata['fullname'];
+    $_SESSION['fblink'] = $userdata['FBlink'];
     $_SESSION['photo'] = $userdata['photo'];
     $_SESSION['gender'] = $userdata['gender'];
     $_SESSION['sID'] = $userdata['sID'];
@@ -65,6 +65,16 @@ if(isset($session)){
     $_SESSION['department'] = $userdata['department'];
     $_SESSION['grade'] = $userdata['grade'];
     $_SESSION['ticketnum'] = $userdata['ticketnum'];
+    $_SESSION['googleplus'] = $userdata['googleplus'];
+    $_SESSION['twitter'] = $userdata['twitter'];
+    $_SESSION['plurk'] = $userdata['plurk'];
+    $_SESSION['line'] = $userdata['line'];
+    $_SESSION['github'] = $userdata['github'];
+    $_SESSION['linkedin'] = $userdata['linkedin'];
+    $_SESSION['weibo'] = $userdata['weibo'];
+    $_SESSION['wechat'] = $userdata['wechat'];
+    $_SESSION['mail'] = $userdata['mail'];
+
 
     header("Refresh: 0; url=/");
 } else {

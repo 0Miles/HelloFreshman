@@ -69,7 +69,7 @@ class UserCtrl{
 
     function selectUserList($query){
         $this->DBconnect();
-        $result = $this->db->query("SELECT * FROM `userlist` WHERE" . $query)->fetchAll();
+        $result = $this->db->query("SELECT * FROM `userlist` WHERE " . $query)->fetchAll();
         $this->db = NULL;
         if(empty($result)){
             return FALSE;
@@ -100,9 +100,9 @@ class UserCtrl{
         }
     }
 
-    function updateUserData($id,$fblink,$fullname,$gender,$sID,$school,$department,$grade,$ticketnum){
+    function updateUserData($id,$fblink,$fullname,$gender,$sID,$school,$department,$grade,$ticketnum,$googleplus,$twitter,$plurk,$line,$github,$linkedin,$weibo,$wechat,$mail){
         $this->DBconnect();
-        $this->db->exec("UPDATE `userlist` SET `FBlink`='$fblink',`fullname`='$fullname',`gender`='$gender',`sID`='$sID',`school`='$school', `department`='$department',`grade`='$grade',`ticketnum`='$ticketnum' WHERE `ID`='$id'");
+        $this->db->exec("UPDATE `userlist` SET `FBlink`='$fblink',`fullname`='$fullname',`gender`='$gender',`sID`='$sID',`school`='$school', `department`='$department',`grade`='$grade',`ticketnum`='$ticketnum',`googleplus`='$googleplus',`twitter`='$twitter',`plurk`='$plurk',`line`='$line',`github`='$github',`linkedin`='$linkedin',`weibo`='$weibo',`wechat`='$wechat',`mail`='$mail' WHERE `ID`='$id'");
         $this->db = NULL;
     }
 }

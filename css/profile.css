@@ -1,13 +1,20 @@
+@charset "UTF-8";
 .leftside {
   position: absolute;
   top: 60px;
   width: 25vw;
+  overflow: hidden;
   height: -webkit-calc(100vh - 60px);
   height: -ms-calc(100vh - 60px);
   height: -moz-calc(100vh - 60px);
   height: -o-calc(100vh - 60px);
   height: calc(100vh - 60px);
   background-color: #6C4242;
+}
+@media only screen and (max-width: 1024px) {
+  .leftside {
+    display: none;
+  }
 }
 .leftside .photo {
   display: inline-block;
@@ -31,8 +38,12 @@
   color: #FFF;
   font-size: 18px;
   font-weight: normal;
-  margin: 0;
-  margin-bottom: 50px;
+  margin: 5px;
+}
+.leftside ul.subtitle {
+  display: inline-block;
+  text-align: left;
+  width: 13vw;
 }
 .leftside .item {
   display: inline-block;
@@ -55,13 +66,141 @@
 }
 
 .profile {
+  display: table;
   position: absolute;
   top: 60px;
   left: 25vw;
   width: 75vw;
+  overflow: hidden;
   height: -webkit-calc(100vh - 60px);
   height: -ms-calc(100vh - 60px);
   height: -moz-calc(100vh - 60px);
   height: -o-calc(100vh - 60px);
   height: calc(100vh - 60px);
+}
+@media only screen and (max-width: 1024px) {
+  .profile {
+    left: 0;
+    width: 100vw;
+  }
+}
+.profile .profileblock ul {
+  display: inline-block;
+  padding: 0;
+  width: -webkit-calc(75vw - 80px);
+  width: -ms-calc(75vw - 80px);
+  width: -moz-calc(75vw - 80px);
+  width: -o-calc(75vw - 80px);
+  width: calc(75vw - 80px);
+}
+@media only screen and (max-width: 1024px) {
+  .profile .profileblock ul {
+    width: -webkit-calc(100vw);
+    width: -ms-calc(100vw);
+    width: -moz-calc(100vw);
+    width: -o-calc(100vw);
+    width: calc(100vw);
+  }
+}
+.profile .profileblock ul .notext:before {
+  display: block;
+  position: absolute;
+  content: "尚未填寫";
+  width: 150px;
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.profile .profileblock ul .notext:before:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.profile .profileblock ul a {
+  display: list-item;
+  list-style-type: none;
+  float: left;
+  margin: 5px;
+  width: 150px;
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.5);
+  line-height: 150px;
+  text-align: center;
+  color: #FFF;
+  font-size: 20px;
+}
+@media only screen and (max-width: 769px) {
+  .profile .profileblock ul a {
+    font-size: 12px;
+    line-height: 75px;
+  }
+}
+.profile .profileblock ul a img {
+  width: 150px;
+  height: 150px;
+}
+
+.updateProfile {
+  display: inline-block;
+  text-align: center;
+  height: -webkit-calc(100vh - 60px);
+  height: -ms-calc(100vh - 60px);
+  height: -moz-calc(100vh - 60px);
+  height: -o-calc(100vh - 60px);
+  height: calc(100vh - 60px);
+  width: 75vw;
+}
+@media only screen and (max-width: 1024px) {
+  .updateProfile {
+    width: -webkit-calc(100vw);
+    width: -ms-calc(100vw);
+    width: -moz-calc(100vw);
+    width: -o-calc(100vw);
+    width: calc(100vw);
+  }
+}
+.updateProfile label {
+  display: inline-block;
+  text-align: left;
+  width: 10vw;
+  font-size: 20px;
+}
+@media only screen and (max-width: 1024px) {
+  .updateProfile label {
+    width: 30vw;
+  }
+}
+.updateProfile input[type="text"] {
+  width: 35vw;
+  height: 30px;
+  border-radius: 5px;
+  border: 2px solid #CCC;
+  padding-left: 5px;
+  background: #FEFEFE;
+  margin: 5px;
+}
+@media only screen and (max-width: 1024px) {
+  .updateProfile input[type="text"] {
+    width: 45vw;
+  }
+}
+.updateProfile select {
+  width: 35vw;
+  height: 35px;
+  border-radius: 5px;
+  border: 2px solid #CCC;
+  background: #FEFEFE;
+  padding-left: 5px;
+  margin: 5px;
+}
+@media only screen and (max-width: 1024px) {
+  .updateProfile select {
+    width: 45vw;
+  }
+}
+.updateProfile img {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+}
+.updateProfile .labimg {
+  text-align: center;
+  height: 35px;
 }

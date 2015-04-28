@@ -17,7 +17,7 @@
             </a>
             <a href="logout.php" class="navitem">登出</a>
             <a href="#" class="navitem">留言</a>
-            <a href="#" class="navitem">邀請</a>
+            <a href="#" class="navitem">通知</a>
             <a href="profile.php?ID=<?php echo $_SESSION['ID']; ?>" class="navitem">
                 <div class='navphoto' style='background-image:url(images/userphotos/<?php
                     if($_SESSION['photo']){
@@ -45,12 +45,17 @@
             ?>.jpg)'></div>
             <h1 class='fullname'><?php echo $argument['fullname'];?></h1>
             <h2 class='subtitle'>
-                <?php
-                echo $cud->getDepartment($argument['department']).' - '.$cud->getGrade($argument['grade']);
-                ?>
-
+                <?=$cud->getSchool($argument['school']).' - '.$cud->getDepartment($argument['department'])?>
             </h2>
-            <a href='profile.php?ID=<?php echo $argument['ID']?>' class='item item-focus'>個人資料</a>
+            <ul class='subtitle'>
+                <li><?=$cud->getGrade($argument['grade'])?></li>
+                <li><?=$cud->getGender($argument['gender'])?></li>
+                <li><?=$cud->getsID($argument['sID'])?></li>
+                <li><?=$cud->getTicketnum($argument['ticketnum'])?></li>
+            </ul>
+
+            <p></p>
+            <a href='profile.php?ID=<?php echo $argument['ID']?>' class='item item-focus'>聯絡資訊</a>
             <a href='#' class='item'>留言</a>
             <?php if($_SESSION['ID']==$argument['ID']){?>
             <a href='profile.php?ID=<?php echo $_SESSION['ID']?>&update=profile' class='item'>編輯資料</a>
@@ -58,7 +63,56 @@
             <?php }?>
         </div>
         <div class='profile slashBackground'>
+            <div class='profileblock container'>
 
+                <ul>
+                    <?php if(empty($argument['FBlink'])){ ?>
+                        <a href='#' class='notext'><img src='images/contact/facebook.png'></a>
+                    <?php }else{ ?>
+                        <a href='<?=$argument['FBlink']?>'><img src='images/contact/facebook.png'></a>
+                    <?php } ?>
+
+                    <?php if(empty($argument['googleplus'])){ ?>
+                        <a href='#' class='notext'><img src='images/contact/googleplus.png'></a>
+                    <?php }else{ ?>
+                        <a href='<?=$argument['googleplus']?>'><img src='images/contact/googleplus.png'></a>
+                    <?php } ?>
+
+                    <?php if(empty($argument['twitter'])){ ?>
+                        <a href='#' class='notext'><img src='images/contact/twitter.png'></a>
+                    <?php }else{ ?>
+                        <a href='<?=$argument['twitter']?>'><img src='images/contact/twitter.png'></a>
+                    <?php } ?>
+
+                    <?php if(empty($argument['plurk'])){ ?>
+                        <a href='#' class='notext'><img src='images/contact/plurk.png'></a>
+                    <?php }else{ ?>
+                        <a href='<?=$argument['plurk']?>'><img src='images/contact/plurk.png'></a>
+                    <?php } ?>
+
+                    <?php if(empty($argument['github'])){ ?>
+                        <a href='#' class='notext'><img src='images/contact/github.png'></a>
+                    <?php }else{ ?>
+                        <a href='<?=$argument['github']?>'><img src='images/contact/github.png'></a>
+                    <?php } ?>
+
+                    <?php if(empty($argument['linkedin'])){ ?>
+                        <a href='#' class='notext'><img src='images/contact/linkedin.png'></a>
+                    <?php }else{ ?>
+                        <a href='<?=$argument['linkedin']?>'><img src='images/contact/linkedin.png'></a>
+                    <?php } ?>
+
+                    <?php if(empty($argument['weibo'])){ ?>
+                        <a href='#' class='notext'><img src='images/contact/weibo.png'></a>
+                    <?php }else{ ?>
+                        <a href='<?=$argument['weibo']?>'><img src='images/contact/weibo.png'></a>
+                    <?php } ?>
+
+                    <a href='#'><img src='images/contact/line.png'></a>
+                    <a href='#'><img src='images/contact/wechat.png'></a>
+                    <a href='#'><img src='images/contact/mail.png'></a>
+                </ul>
+            </div>
         </div>
 
 

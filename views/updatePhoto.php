@@ -45,12 +45,16 @@
             ?>.jpg)'></div>
             <h1 class='fullname'><?php echo $argument['fullname'];?></h1>
             <h2 class='subtitle'>
-                <?php
-                echo $cud->getDepartment($argument['department']).' - '.$cud->getGrade($argument['grade']);
-                ?>
-
+                <?=$cud->getSchool($argument['school']).' - '.$cud->getDepartment($argument['department'])?>
             </h2>
-            <a href='profile.php?ID=<?php echo $argument['ID']?>' class='item'>個人資料</a>
+            <ul class='subtitle'>
+                <li><?=$cud->getGrade($argument['grade'])?></li>
+                <li><?=$cud->getGender($argument['gender'])?></li>
+                <li><?=$cud->getsID($argument['sID'])?></li>
+                <li><?=$cud->getTicketnum($argument['ticketnum'])?></li>
+            </ul>
+            <p></p>
+            <a href='profile.php?ID=<?php echo $argument['ID']?>' class='item'>聯絡資訊</a>
             <a href='#' class='item'>留言</a>
             <a href='profile.php?ID=<?php echo $_SESSION['ID']?>&update=profile' class='item'>編輯資料</a>
             <a href='profile.php?ID=<?php echo $_SESSION['ID']?>&update=photo' class='item item-focus'>更換頭貼</a>

@@ -139,4 +139,20 @@ class CollateUserData{
             }
         }
     }
+
+    function getsID($args){
+        if(empty($args)){
+            return '尚未填寫學號';
+        }else{
+            return $args;
+        }
+    }
+
+    function getTicketnum($args){
+        if(empty($args)){
+            return '尚未填寫准考證號';
+        }else{
+            return $args;
+        }
+    }
 }

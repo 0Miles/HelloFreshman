@@ -31,14 +31,171 @@
 
         </div>
         <div class="fliterList">
-            <a href="?fliter=school" class="fliter fliter-focus" id='school'>學校同學</a>
-            <a href="?fliter=dept" class="fliter" id='dept'>系上同學</a>
-            <a href="?fliter=upper" class="fliter" id='upper'>學長學姊</a>
-            <a href="?fliter=under" class="fliter" id='under'>學弟學妹</a>
-            <a href="?fliter=lineal" class="fliter" id='lineal'>直系</a>
-            <a href="#" class="fliter" id="search">搜尋</a>
+            <a href="?fliter=school" class="fliter <?php if($_GET['fliter']=='school'){echo 'fliter-focus';}?>" id='school'>學校同學</a>
+            <a href="?fliter=dept" class="fliter <?php if($_GET['fliter']=='dept'){echo 'fliter-focus';}?>" id='dept'>系上同學</a>
+            <a href="?fliter=upper" class="fliter <?php if($_GET['fliter']=='upper'){echo 'fliter-focus';}?>" id='upper'>學長學姊</a>
+            <a href="?fliter=under" class="fliter <?php if($_GET['fliter']=='under'){echo 'fliter-focus';}?>" id='under'>學弟學妹</a>
+            <a href="?fliter=lineal" class="fliter <?php if($_GET['fliter']=='lineal'){echo 'fliter-focus';}?>" id='lineal'>直系</a>
+            <a href="?fliter=search" class="fliter <?php if($_GET['fliter']=='search'){echo 'fliter-focus';}?>" id="search">搜尋</a>
         </div>
         <div class="main slashBackground">
+            <?php
+
+            include 'collate.php';
+            $cud = new CollateUserData;
+            foreach((array)$argument as $user){
+                if(empty($user)){break;}
+            ?>
+
+                <div class='userBox'>
+                    <div class='userPhoto' style='background-image:url(images/userphotos/<?php
+                        if($_SESSION['photo']){
+                            echo $user['ID'];
+                        }else{
+                            echo 'defualt';
+                        }
+                    ?>.jpg)'></div>
+
+                    <div class='userName'><?=$user['fullname']?></div>
+                    <div class='userGrade'><?=$cud->getGrade($user['grade'])?></div>
+                    <div class='userGender'><?=$cud->getGender($user['gender'])?></div>
+                </div>
+
+            <?php
+            }
+            ?>
+
+            <div class='userBox'>
+                <div class='userPhoto' style='background-image:url(images/userphotos/<?php
+                    if($_SESSION['photo']){
+                        echo $user['ID'];
+                    }else{
+                        echo 'defualt';
+                    }
+                ?>.jpg)'></div>
+
+                <div class='userName'><?=$user['fullname']?></div>
+                <div class='userGrade'><?=$cud->getGrade($user['grade'])?></div>
+                <div class='userGender'><?=$cud->getGender($user['gender'])?></div>
+            </div>
+            <div class='userBox'>
+                <div class='userPhoto' style='background-image:url(images/userphotos/<?php
+                    if($_SESSION['photo']){
+                        echo $user['ID'];
+                    }else{
+                        echo 'defualt';
+                    }
+                ?>.jpg)'></div>
+
+                <div class='userName'><?=$user['fullname']?></div>
+                <div class='userGrade'><?=$cud->getGrade($user['grade'])?></div>
+                <div class='userGender'><?=$cud->getGender($user['gender'])?></div>
+            </div>
+            <div class='userBox'>
+                <div class='userPhoto' style='background-image:url(images/userphotos/<?php
+                    if($_SESSION['photo']){
+                        echo $user['ID'];
+                    }else{
+                        echo 'defualt';
+                    }
+                ?>.jpg)'></div>
+
+                <div class='userName'><?=$user['fullname']?></div>
+                <div class='userGrade'><?=$cud->getGrade($user['grade'])?></div>
+                <div class='userGender'><?=$cud->getGender($user['gender'])?></div>
+            </div>
+            <div class='userBox'>
+                <div class='userPhoto' style='background-image:url(images/userphotos/<?php
+                    if($_SESSION['photo']){
+                        echo $user['ID'];
+                    }else{
+                        echo 'defualt';
+                    }
+                ?>.jpg)'></div>
+
+                <div class='userName'><?=$user['fullname']?></div>
+                <div class='userGrade'><?=$cud->getGrade($user['grade'])?></div>
+                <div class='userGender'><?=$cud->getGender($user['gender'])?></div>
+            </div>
+            <div class='userBox'>
+                <div class='userPhoto' style='background-image:url(images/userphotos/<?php
+                    if($_SESSION['photo']){
+                        echo $user['ID'];
+                    }else{
+                        echo 'defualt';
+                    }
+                ?>.jpg)'></div>
+
+                <div class='userName'><?=$user['fullname']?></div>
+                <div class='userGrade'><?=$cud->getGrade($user['grade'])?></div>
+                <div class='userGender'><?=$cud->getGender($user['gender'])?></div>
+            </div>
+            <div class='userBox'>
+                <div class='userPhoto' style='background-image:url(images/userphotos/<?php
+                    if($_SESSION['photo']){
+                        echo $user['ID'];
+                    }else{
+                        echo 'defualt';
+                    }
+                ?>.jpg)'></div>
+
+                <div class='userName'><?=$user['fullname']?></div>
+                <div class='userGrade'><?=$cud->getGrade($user['grade'])?></div>
+                <div class='userGender'><?=$cud->getGender($user['gender'])?></div>
+            </div>
+            <div class='userBox'>
+                <div class='userPhoto' style='background-image:url(images/userphotos/<?php
+                    if($_SESSION['photo']){
+                        echo $user['ID'];
+                    }else{
+                        echo 'defualt';
+                    }
+                ?>.jpg)'></div>
+
+                <div class='userName'><?=$user['fullname']?></div>
+                <div class='userGrade'><?=$cud->getGrade($user['grade'])?></div>
+                <div class='userGender'><?=$cud->getGender($user['gender'])?></div>
+            </div>
+            <div class='userBox'>
+                <div class='userPhoto' style='background-image:url(images/userphotos/<?php
+                    if($_SESSION['photo']){
+                        echo $user['ID'];
+                    }else{
+                        echo 'defualt';
+                    }
+                ?>.jpg)'></div>
+
+                <div class='userName'><?=$user['fullname']?></div>
+                <div class='userGrade'><?=$cud->getGrade($user['grade'])?></div>
+                <div class='userGender'><?=$cud->getGender($user['gender'])?></div>
+            </div>
+            <div class='userBox'>
+                <div class='userPhoto' style='background-image:url(images/userphotos/<?php
+                    if($_SESSION['photo']){
+                        echo $user['ID'];
+                    }else{
+                        echo 'defualt';
+                    }
+                ?>.jpg)'></div>
+
+                <div class='userName'><?=$user['fullname']?></div>
+                <div class='userGrade'><?=$cud->getGrade($user['grade'])?></div>
+                <div class='userGender'><?=$cud->getGender($user['gender'])?></div>
+            </div>
+            <div class='userBox'>
+                <div class='userPhoto' style='background-image:url(images/userphotos/<?php
+                    if($_SESSION['photo']){
+                        echo $user['ID'];
+                    }else{
+                        echo 'defualt';
+                    }
+                ?>.jpg)'></div>
+
+                <div class='userName'><?=$user['fullname']?></div>
+                <div class='userGrade'><?=$cud->getGrade($user['grade'])?></div>
+                <div class='userGender'><?=$cud->getGender($user['gender'])?></div>
+            </div>
+
 
         </div>
 

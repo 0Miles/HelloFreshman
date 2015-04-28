@@ -8,6 +8,7 @@ html, body {
   background-position: center center;
   background-attachment: fixed;
   display: table;
+  overflow-x: hidden;
 }
 
 a {
