@@ -108,9 +108,25 @@
                         <a href='<?=$argument['weibo']?>'><img src='images/contact/weibo.png'></a>
                     <?php } ?>
 
-                    <a href='#'><img src='images/contact/line.png'></a>
-                    <a href='#'><img src='images/contact/wechat.png'></a>
-                    <a href='#'><img src='images/contact/mail.png'></a>
+
+                    <?php if(empty($argument['line'])){ ?>
+                        <a href='#' class='notext'><img src='images/contact/line.png'></a>
+                    <?php }else{ ?>
+                        <a href='#' id='linebox' class='dialogOpen'><img src='images/contact/line.png'></a>
+                    <?php } ?>
+
+                    <?php if(empty($argument['wechat'])){ ?>
+                        <a href='#' class='notext'><img src='images/contact/wechat.png'></a>
+                    <?php }else{ ?>
+                        <a href='#' id='wechatbox' class='dialogOpen'><img src='images/contact/wechat.png'></a>
+                    <?php } ?>
+
+                    <?php if(empty($argument['mail'])){ ?>
+                        <a href='#' class='notext'><img src='images/contact/mail.png'></a>
+                    <?php }else{ ?>
+                        <a href='#' id='mailbox' class='dialogOpen'><img src='images/contact/mail.png'></a>
+                    <?php } ?>
+
                 </ul>
             </div>
         </div>
@@ -118,5 +134,49 @@
 
 
     </div>
+    <div id='dialogTable'>
+        <div id="dialogContainer">
+    		<div class="dialog">
+    			<div id="dialogClose"></div>
+    			<p class="dialogText" id="line"><?=$argument['line']?></p>
+                <p class="dialogText" id="wechat"><?=$argument['wechat']?></p>
+                <p class="dialogText" id="mail"><?=$argument['mail']?></p>
+    		</div>
+    	</div>
+    </div>
+
+    <script src="js/jquery-1.11.0.js"></script>
+    <script>
+    $(function() {
+
+        $('.dialogOpen').click(function(){
+            $('#dialogTable').css('display','table');
+            $('#dialogContainer').css('display','table-cell');
+            $('.dialog').css('display','inline-block');
+        });
+
+        $('#linebox').click(function(){
+            $('#line').css('display','inline');
+        });
+
+        $('#wechatbox').click(function(){
+            $('#wechat').css('display','inline');
+        });
+
+        $('#mailbox').click(function(){
+            $('#mail').css('display','inline');
+        });
+
+        $('#dialogClose').click(function(){
+            $('#dialogTable').css('display','none');
+            $('#dialogContainer').css('display','none');
+            $('.dialog').css('display','none');
+            $('#line').css('display','none');
+            $('#wechat').css('display','none');
+            $('#mail').css('display','none');
+        });
+
+    });
+    </script>
 </body>
 </html>

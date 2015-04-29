@@ -17,7 +17,7 @@
             </a>
             <a href="logout.php" class="navitem">登出</a>
             <a href="#" class="navitem">留言</a>
-            <a href="#" class="navitem">邀請</a>
+            <a href="#" class="navitem">通知</a>
             <a href="profile.php?ID=<?php echo $_SESSION['ID']; ?>" class="navitem">
                 <div class='navphoto' style='background-image:url(images/userphotos/<?php
                     if($_SESSION['photo']){
@@ -60,11 +60,34 @@
             <a href='profile.php?ID=<?php echo $_SESSION['ID']?>&update=photo' class='item item-focus'>更換頭貼</a>
         </div>
         <div class='profile slashBackground'>
-
+            <form method="post" enctype="multipart/form-data">
+            	<input type='file' id="imginput">
+            </form>
         </div>
 
 
 
     </div>
+
+    <script src="js/jquery-1.11.0.js"></script>
+    <script>
+    $(document).ready(function(){
+    	$('#imginput').change(function(){
+    		readURL(this);
+    	});
+    });
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+               	$('.photo').css('background-image', 'url(' + e.target.result + ')');
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    </script>
 </body>
 </html>

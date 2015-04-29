@@ -17,7 +17,7 @@
             </a>
             <a href="logout.php" class="navitem">登出</a>
             <a href="#" class="navitem">留言</a>
-            <a href="#" class="navitem">邀請</a>
+            <a href="#" class="navitem">通知</a>
             <a href="profile.php?ID=<?php echo $_SESSION['ID']; ?>" class="navitem">
                 <div class='navphoto' style='background-image:url(images/userphotos/<?php
                     if($_SESSION['photo']){
@@ -43,11 +43,18 @@
 
             include 'collate.php';
             $cud = new CollateUserData;
-            foreach((array)$argument as $user){
-                if(empty($user)){break;}
+            if(empty($argument)){
+            ?>
+                <div class='noUser'>
+                    沒有找到符合條件的同學<br>
+                    多填寫個人資料可以幫助你找到可能認識的人唷
+                </div>
+            <?php
+            }else{
+                foreach((array)$argument as $user){
             ?>
 
-                <div class='userBox'>
+                <a href='profile.php?ID=<?=$user['ID']?>' class='userBox'>
                     <div class='userPhoto' style='background-image:url(images/userphotos/<?php
                         if($_SESSION['photo']){
                             echo $user['ID'];
@@ -57,11 +64,14 @@
                     ?>.jpg)'></div>
 
                     <div class='userName'><?=$user['fullname']?></div>
-                    <div class='userGrade'><?=$cud->getGrade($user['grade'])?></div>
-                    <div class='userGender'><?=$cud->getGender($user['gender'])?></div>
-                </div>
+                    <ul class='userProfileList'>
+                        <li><?=$cud->getDepartment($user['department']). ' - ' .$cud->getGrade($user['grade'])?></li>
+                        <li><?=$cud->getGender($user['gender'])?></li>
+                    </ul>
+                </a>
 
             <?php
+                }
             }
             ?>
         </div>

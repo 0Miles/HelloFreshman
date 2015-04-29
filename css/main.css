@@ -7,6 +7,7 @@
   width: 100vw;
   background-color: #6C4242;
   box-shadow: 0px 3px 2px rgba(255, 255, 255, 0.15);
+  overflow: hidden;
   z-index: 1;
 }
 .fliterList .fliter {
@@ -46,29 +47,47 @@
 }
 
 .userBox {
+  display: inline-block;
   overflow: hidden;
   float: left;
   background: #FFF;
-  width: 190px;
-  margin: 10px;
+  width: 200px;
+  margin: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
   border: 5px solid #A06E6E;
+  color: #000;
+  -moz-transition: 0.3s, linear;
+  -o-transition: 0.3s, linear;
+  -webkit-transition: 0.3s, linear;
+  transition: 0.3s, linear;
+}
+.userBox:hover {
+  -moz-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02);
 }
 .userBox .userPhoto {
   width: 200px;
   height: 200px;
   background-size: cover;
   background-position: center;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  -moz-transition: 0.3s, linear;
+  -o-transition: 0.3s, linear;
+  -webkit-transition: 0.3s, linear;
+  transition: 0.3s, linear;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7), 0px 2px 15px rgba(0, 0, 0, 0.7) inset;
 }
 .userBox .userName {
   font-size: 24px;
   padding-top: 5px;
 }
-.userBox .userGrade {
+.userBox .userProfileList {
+  display: inline-block;
+  list-style-type: none;
   font-size: 16px;
-}
-.userBox .userGender {
-  font-size: 16px;
+  color: #333;
+  margin: 0;
+  padding: 0;
   padding-bottom: 15px;
 }

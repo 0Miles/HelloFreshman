@@ -17,7 +17,7 @@
             </a>
             <a href="logout.php" class="navitem">登出</a>
             <a href="#" class="navitem">留言</a>
-            <a href="#" class="navitem">邀請</a>
+            <a href="#" class="navitem">通知</a>
             <a href="profile.php?ID=<?php echo $_SESSION['ID']; ?>" class="navitem">
                 <div class='navphoto' style='background-image:url(images/userphotos/<?php
                     if($_SESSION['photo']){

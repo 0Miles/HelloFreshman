@@ -13,6 +13,10 @@ if(empty($_SESSION['ID'])){
     }
 
     switch($_GET['fliter']){
+        case 'school':
+            $query = "`school` = '".$_SESSION['school']."' and `ID` !='".$_SESSION['ID']."'";
+            $userlist = $uc->selectUserList($query);
+            break;
         case 'dept':
             $query = "`department` = '".$_SESSION['department']."' and `ID` !='".$_SESSION['ID']."'";
             $userlist = $uc->selectUserList($query);
@@ -26,8 +30,7 @@ if(empty($_SESSION['ID'])){
             $userlist = $uc->selectUserList($query);
             break;
         default:
-            $query = "`school` = '".$_SESSION['school']."' and `ID` !='".$_SESSION['ID']."'";
-            $userlist = $uc->selectUserList($query);
+            $userlist = array();
     }
     $view->load('main',$userlist);
 }
